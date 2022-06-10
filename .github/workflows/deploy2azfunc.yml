@@ -3,7 +3,6 @@ name: Azure Function Deploy
 on:
   workflow_dispatch:
 
-
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
   AZURE_FUNCTIONAPP_NAME: sample-python-githubactions
@@ -18,7 +17,7 @@ jobs:
     steps:
       - name: call base workflow
       - uses: ./.github/workflows/base
-      
+
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
