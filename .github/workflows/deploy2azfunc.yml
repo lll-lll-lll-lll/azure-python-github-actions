@@ -17,17 +17,16 @@ env:
 
 
 jobs:
+  callbaseworkflow:
+    uses: ./.github/workflows/base.yml
   deploy_from_base:
     runs-on: ubuntu-latest
     environment: production
 
     steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.inputs.ref }}
-          
-      - name: call base workflow
-        uses: ./.github/workflows/base.yml
+      # - uses: actions/checkout@v3
+      #   with:
+      #     ref: ${{ github.event.inputs.ref }}
       
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
