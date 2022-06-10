@@ -2,7 +2,9 @@ import azure.functions as func
 from azure.functions import Context
 from azure.functions import AsgiMiddleware
 from fastapi import FastAPI
+import nest_asyncio
 
+nest_asyncio.apply()
 app = FastAPI()
 
 @app.get("/hello")
