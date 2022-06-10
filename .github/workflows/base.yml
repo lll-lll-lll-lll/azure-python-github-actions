@@ -23,15 +23,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64' 
-          
 
-      - name: Lint with flake8
-        run: |
-          # stop the build if there are Python syntax errors or undefined names
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # exit-zero はすべてのエラーを警告として扱う。 GitHub エディタの幅は 127 文字
-          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-      
       - name: 'azure function用にpip install'
         shell: bash
         run: |
@@ -40,6 +32,13 @@ jobs:
           pip install flake8 pytest
           pip install -r requirements.txt --target=".python_packages/lib/site-packages"
           popd
+      
+      - name: Lint with flake8
+        run: |
+          # stop the build if there are Python syntax errors or undefined names
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          # exit-zero はすべてのエラーを警告として扱う。 GitHub エディタの幅は 127 文字
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Test with pytest
         run: |
