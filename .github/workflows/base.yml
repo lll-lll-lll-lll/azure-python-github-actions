@@ -42,10 +42,9 @@ jobs:
 
 
   deploy:
-    - name: build job is succesed
     if: ${{success()}}
-    needs: [build]
-    
+    needs: build
+
     runs-on: ubuntu-latest
     steps:
       - name: 'Run Azure Functions Action'
