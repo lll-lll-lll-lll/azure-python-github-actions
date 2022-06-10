@@ -1,14 +1,9 @@
-name: Azure Function To Deploy
-
+name: Base 
 on: 
+  workflow_call:
   push:
     branches:
       - master
-
-env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
-  AZURE_FUNCTIONAPP_NAME: sample-python-githubactions
-  PYTHON_VERSION: '3.9'
 
 jobs:
   build:
@@ -17,7 +12,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.7", "3.8", "3.9"]
+        python-version: ["3.8", "3.9"]
     
     steps:
       - uses: actions/checkout@v3
@@ -41,17 +36,4 @@ jobs:
           pytest
 
 
-  deploy:
-    if: ${{success()}}
-    needs: build
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
-        with:
-          app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
-    
+  
