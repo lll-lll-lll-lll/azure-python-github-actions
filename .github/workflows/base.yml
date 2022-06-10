@@ -17,7 +17,6 @@ jobs:
         python-version: ["3.7", "3.8", "3.9"]
     
     steps:
-      # リポジトリのコピー
       - uses: actions/checkout@v3
       - name: setup python ${{ matrix.python-version }}
 
@@ -25,7 +24,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           architecture: 'x64' 
-      - name: Python Version ${{ matrix.python-version }}
           
 
       - name: Lint with flake8
