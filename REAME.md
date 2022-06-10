@@ -2,6 +2,7 @@
 必要なこと
 - requirements.txtの用意<br>
 - Azure Functionの初期化 [参考URL](https://qiita.com/Futo_Horio/items/dd36e0ed7d674f3f226f)<br>
+- .venv/ の用意
 
 **仮想環境構築**
 ```sh
