@@ -17,7 +17,7 @@ env:
 
 jobs:
   callbaseworkflow:
-    uses: ./.github/workflows/base.yml@1
+    uses: ./.github/workflows/base.yml
   deploy_from_base:
     runs-on: ubuntu-latest
     environment: production
