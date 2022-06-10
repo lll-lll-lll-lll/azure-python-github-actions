@@ -10,13 +10,14 @@ env:
 
 
 jobs:
+  
   deploy_from_base:
     runs-on: ubuntu-latest
     environment: production
-
     steps:
-      - uses: ./.github/workflows/base
-
+      - name: call-workflow-output
+        uses: ./.github/workflows/base
+        
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa

@@ -1,10 +1,10 @@
 name: Base 
 on: 
   workflow_call:
-    outputs:
+    inputs:
       base_output:  
         description: "build jobのoutput"
-        value: ${{ jobs.build.outputs.base_output }}
+        value: ${{ jobs.build.inputs.base_output }}
   push:
     branches:
       - master
