@@ -1,11 +1,7 @@
 name: Python Base Workflow
 
 on: 
-  # workflow_call:
-  #   inputs:
-  #     base_output:  
-  #       description: "build jobのoutput"
-  #       value: ${{ jobs.build.output.base_output }}
+  workflow_call:
 
   push:
     branches:
