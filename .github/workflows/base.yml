@@ -1,7 +1,7 @@
 name: Base 
 on: 
   workflow_call:
-    output:
+    outputs:
       base_output:  
         description: "build jobのoutput"
         value: ${{ jobs.build.outputs.base_output }}
