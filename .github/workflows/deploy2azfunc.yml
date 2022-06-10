@@ -22,10 +22,6 @@ jobs:
     environment: production
 
     steps:
-      - uses: actions/checkout@v3
-      with:
-          ref: ${{ github.event.inputs.ref }}
-          
       - name: call base workflow
       - uses: ./.github/workflows/base
       
