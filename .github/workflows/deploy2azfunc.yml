@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: call base workflow
-        uses: ./.github/workflows/base
+        uses: ./.github/workflows/base.yml
       
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
