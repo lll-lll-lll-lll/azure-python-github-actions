@@ -12,7 +12,7 @@ app = FastAPI()
 
 @app.get("/api/hello")
 def read_root():
-    return {"Hello": "World"}
+    return {"message": "deploy from github actions"}
 
 def main(req: func.HttpRequest, context: Context) -> func.HttpResponse:
     return AsgiMiddleware(app).handle(req, context)
