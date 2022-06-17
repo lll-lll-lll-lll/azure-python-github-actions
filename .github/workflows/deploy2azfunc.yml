@@ -11,7 +11,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
-  AZURE_FUNCTIONAPP_NAME: sample-python-githubactions # Azure Functionの名前を入力
+  AZURE_FUNCTIONAPP_NAME: etj-function # Azure Functionの名前を入力
   PYTHON_VERSION: '3.9'
 
 
