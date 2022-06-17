@@ -10,7 +10,7 @@ on:
         required: true
 
 env:
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: './SamplePython'
   AZURE_FUNCTIONAPP_NAME: etj-function # Azure Functionの名前を入力
   PYTHON_VERSION: '3.9'
 
