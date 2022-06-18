@@ -7,6 +7,9 @@ on:
     branches:
       - develop
 
+env:
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'
+  
 jobs:
   build:
     runs-on: ubuntu-latest
