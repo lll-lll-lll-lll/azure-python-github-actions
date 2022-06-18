@@ -39,6 +39,6 @@ jobs:
 
   test:
     runs-on: ubuntu-latest   
-    - name: Test with pytest
-      run: |
-        pytest
+    name: Test with pytest
+    run: |
+      pytest -v
