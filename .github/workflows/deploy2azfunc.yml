@@ -23,10 +23,18 @@ jobs:
     environment: production
 
     steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v3
+      
+      - name: Setup Python ${{ env.PYTHON_VERSION }} Environment
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
       - name: 'dep install'
         shell: bash
         run: |
-          pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          pushd '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/'
           python -m pip install --upgrade pip
           pip install flake8 pytest
           pip install -r requirements.txt --target=".python_packages/lib/site-packages"
