@@ -36,7 +36,9 @@ jobs:
           pip install flake8 pytest
           pip install -r requirements.txt --target=".python_packages/lib/site-packages"
           popd
-     
-      - name: Test with pytest
-        run: |
-          pytest
+
+  test:
+    runs-on: ubuntu-latest   
+    - name: Test with pytest
+      run: |
+        pytest
