@@ -38,7 +38,7 @@ jobs:
           popd
 
   test:
-    runs-on: ubuntu-latest   
-    name: Test with pytest
-    run: |
-      pytest -v
+    runs-on: ubuntu-latest  
+    - name: Test with pytest
+      run: |
+        pytest -v
