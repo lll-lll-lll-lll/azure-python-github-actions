@@ -21,13 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: setup python ${{ matrix.python-version }}
+      - name: setup python 3.9
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.9"
           architecture: 'x64' 
+          cache: 'pip'
       
-
       - name: 'azure function用にpip install'
         shell: bash
         run: |
@@ -36,9 +36,7 @@ jobs:
           pip install flake8 pytest
           pip install -r requirements.txt --target=".python_packages/lib/site-packages"
           popd
-
-  test:
-    runs-on: ubuntu-latest  
-    - name: Test with pytest
-      run: |
-        pytest -v
+     
+      - name: Test with pytest
+        run: |
+          pytest
